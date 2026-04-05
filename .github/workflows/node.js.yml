@@ -1,31 +1,31 @@
-name: Node.js CI
+[cite_start]name: Node.js CI [cite: 73]
 
 on:
   push:
-    branches: [ "main" ]
+    [cite_start]branches: [ "main" ] [cite: 89]
   pull_request:
-    branches: [ "main" ]
+    [cite_start]branches: [ "main" ] [cite: 89]
 
 jobs:
   build:
-    name: Build and Test
-    runs-on: ubuntu-latest
+    [cite_start]name: Build and Test [cite: 77]
+    [cite_start]runs-on: ubuntu-latest [cite: 45]
     permissions:
-      contents: read
-      pull-requests: write
+      [cite_start]contents: write [cite: 76]
+      [cite_start]pull-requests: write [cite: 76]
 
     steps:
-    - uses: actions/checkout@v4
+    - [cite_start]uses: actions/checkout@v4 [cite: 75]
     - name: Use Node.js 22.x
-      uses: actions/setup-node@v4
+      [cite_start]uses: actions/setup-node@v4 [cite: 75]
       with:
-        node-version: 22.x
+        [cite_start]node-version: 22.x [cite: 77]
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build
+    - [cite_start]run: npm ci [cite: 30]
+    - [cite_start]run: npm run build [cite: 70]
     - name: Run tests with coverage
-      run: npm test -- --coverage
+      [cite_start]run: npm test -- --coverage [cite: 70]
       
     - name: Vitest Coverage Report
-      uses: davelosert/vitest-coverage-report-action@v2
+      [cite_start]uses: davelosert/vitest-coverage-report-action@v2 [cite: 76, 225]
       if: always()
