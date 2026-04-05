@@ -32,7 +32,7 @@ jobs:
       run: npm run build
 
     - name: Run tests with coverage
-      run: npm test -- --coverage --reporter=json-summary --reporter=default
+      run: npm test -- --coverage.enabled=true --coverage.reporter=json-summary --coverage.reporter=default
       
     - name: Vitest Coverage Report
       uses: davelosert/vitest-coverage-report-action@v2
